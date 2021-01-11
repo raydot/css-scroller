@@ -1,0 +1,78 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    border: 1px solid #000;
+    background-color: #ddd;
+}
+
+.headerLink {
+    font-size: 1.2em;
+    justify-content: center;
+    align-items: center;
+}
+
+.uberClass {
+    border: 2px solid #00f;
+}
+
+.linkToClass {
+    display: grid;
+}
+
+/* .fancyAsterisk {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    border: 1px solid #f00;
+} */
+
+.subHead {
+    display: flex;
+    align-items: center;
+    margin: 40px 0px 20px;
+    border-top: 2px solid #ccc;
+}
+
+.subHead img {
+    margin-right: 20px;
+}
+
+.subGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto)
+}
+
+.gridItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.gridItem img {
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.subImage::before {
+    content: "*";
+    font-size: 3em;
+    color: orangered;
+
+}

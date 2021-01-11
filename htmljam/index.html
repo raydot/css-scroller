@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Scroller</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <div id="mainNav">
+            <a href="#item1" class="headerLink" id="item1Link" >First Thing</a>
+            <a href="#item2" class="headerLink" id="item2Link">Second Thing</a>
+            <a href="#item3" class="headerLink" id="item3Link">Third Thing</a>
+        </div>
+    </nav>
+    <main>
+        <div id="item1" class="linkedToClass">
+            <div class="subHead">
+                <img class="subImage" src="https://www.fillmurray.com/320/30" /> First Grid Section
+            </div>
+            <div class="subGrid">
+                <div class="gridItem">
+                    <img src="https://placehold.it/320x240" />
+                    Lugubrium
+                </div>
+                <div class="gridItem">
+                    <img src="https://placehold.it/320x240" />
+                    The Whyy Knot
+                </div>
+                <div class="gridItem">
+                    <img src="https://placehold.it/320x240" />
+                    September 22nd, 1977
+                </div>
+                <div class="gridItem">
+                    <img src="https://placehold.it/320x240" />
+                    Wet Behind The Ears
+                </div>
+                <div class="gridItem">
+                    <img src="https://placehold.it/320x240" />
+                    The Last Dog In Ireland
+                </div>
+                <div class="gridItem">
+                    <img src="https://placehold.it/320x240" />
+                    Is He With You?
+                </div>
+            </div>  
+        </div>
+        <div id="item2" class="linkedToClass">
+            <div class="subHead">
+                <img  class="subImage" src="https://www.fillmurray.com/320/30" /> Second Grid Section
+            </div>
+            <div class="subGrid">
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                Running With Rubberman
+            </div>
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                Field Day For The Mouse
+            </div>
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                Until Next Time
+            </div>
+            </div>  
+        </div>
+        <div id="item3" class="linkedToClass">
+            <div class="subHead" id="item3Id">
+                <img  class="subImage" src="https://www.fillmurray.com/320/30" /> Third Grid Section
+            </div>
+            <div class="subGrid">
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                Not Yet
+            </div>
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                It's Heavy, Man.
+            </div>
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                Fedrovsy's Umbrella
+            </div>
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                Have We Met?
+            </div>
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                The Art of Artlessness
+            </div>
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                Dime a Dozen
+            </div>
+            <div class="gridItem">
+                <img src="https://placehold.it/320x240" />
+                Not Today!
+            </div>
+        </div>
+        </div>
+    </main>
+    <script>
+
+
+        // function doSomething(whichThing) {
+        //     //console.log("Working hard!")
+        //     document.getElementById(whichThing).classList.add("active");
+        // }
+
+        function callback(e) {
+        var e = window.e || e;
+
+    if (e.target.tagName !== 'A')
+        return;
+
+    // Do something
+    let anchorLinks = Array.from(document.getElementsByTagName("a"))
+
+anchorLinks.forEach(item => {
+    item.classList.remove("uberClass")
+})
+    e.target.classList.add("uberClass")
+}
+
+if (document.addEventListener)
+    document.addEventListener('click', callback, false);
+else
+    document.attachEvent('onclick', callback);
+
+    // root = element used as viewport for checking visibility
+    // rootMargin = magin around the root
+    // threshold = percentage (0 - 1) of how visible to root needs to be
+    // If you specify a root option, the target must be a descendant of
+    //      the root element
+    let options = {
+        //root: document.querySelector('#mainNav'),
+        //rootMargin: '0px 0px 100px 0px',
+        threshold: 1
+    }
+
+    let landHo = (entries, observer) => {
+        console.log("Target spotted")
+        // console.log("IOE.iR", observer.isIntersecting)
+        entries.forEach( entry => {
+            if (entry.isIntersecting) {
+                console.log("Land Ho!")
+            } else {
+                console.log("All I see is sea.")
+            }
+            console.log(`
+                boundingClientReact.top: ${entry.boundingClientRect.top}
+                intersectionRatio: ${entry.intersectionRatio}
+                intersectionRect.top: ${entry.intersectionRect.top}
+                isIntersecting: ${entry.isIntersecting}
+                rootBounds.top: ${entry.rootBounds.top}
+                target.id: ${entry.target.id}
+                time: ${entry.time}
+            `)
+        })
+    }
+
+    let observer = new IntersectionObserver(landHo, options)
+
+    let target = document.querySelector('#item3Id')
+    observer.observe(target)
+
+
+
+    </script>
+</body>
+</html>

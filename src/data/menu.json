@@ -1,0 +1,47 @@
+{
+	"menu": {
+		"breakfast": {
+            "b_001": {
+                "name": "Eggs Over Easy",
+                "image": "http://placeimg.com/240/180/any"
+            },
+            "b_002": {
+                "name": "Full Stack o' Flapjack",
+                "image": "http://placeimg.com/240/180/any"
+            },
+            "b_003": {
+                "name": "Moons Over My Hammy",
+                "image": "http://placeimg.com/240/180/any"
+            }
+        },
+		"lunch": {
+            "l_001": {
+                "name": "House BLT",
+                "image": "http://placeimg.com/240/180/any"
+            },
+            "l_002": {
+                "name": "Grilled Cheese &amp; Tomato",
+                "image": "http://placeimg.com/240/180/any"
+            },
+            "l_003": {
+                "name": "Hilarious Salad",
+                "image": "http://placeimg.com/240/180/any"
+            }
+        },
+		"dinner": {
+            "d_001": {
+                "name": "Beef Wellington",
+                "image": "http://placeimg.com/240/180/any"
+            },
+            "d_002": {
+                "name": "Spicy Salmon Hand Roll",
+                "image": "http://placeimg.com/240/180/any"
+            },
+            "d_003": {
+                "name": "Pizza Surprise",
+                "image": "http://placeimg.com/240/180/any"
+            }
+        }
+
+	}
+}
