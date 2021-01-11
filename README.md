@@ -4,6 +4,7 @@ Test application to use the css native scrolling in React.
 
 This is mostly following the documentation on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior).
 
+There is a simple proof-of-concept in the `htmljam` folder that demonstrates the properties of the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver).
 ---
 
 # Getting Started with Create React App
